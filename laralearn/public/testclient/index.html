@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST CLIENT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript">
+            var serverUrl = "/";            
+            
+            function listAuthors() {
+                $.ajax({
+                    type: "GET",
+                    url: serverUrl + "author",
+                })
+                .done(function(result) {
+                    console.log(result);
+                });        
+            }
+            
+            function getAuthor() {
+                $.ajax({
+                    type: "GET",
+                    url: serverUrl + "author/1",
+                })
+                .done(function(result) {
+                    console.log(result)
+                });        
+            }
+            
+            function storeAuthor() {
+                $.ajax({
+                    type: "POST",
+                    url: serverUrl + "author",
+                    data: {
+                        name: 'Fabio Volo'
+                    }
+                })
+                .done(function(result) {
+                    console.log(result);
+                });    
+            }
+            
+            function updateAuthor() {
+                $.ajax({
+                    type: "PUT",
+                    url: serverUrl + "author/3",
+                    data: {
+                        name: 'Enzo Biagi'
+                    }
+                })
+                .done(function(result) {
+                    console.log(result);
+                });    
+            }
+            
+            function deleteAuthor() {
+                $.ajax({
+                    type: "DELETE",
+                    url: serverUrl + "author/3",
+                })
+                .done(function(result) {
+                    console.log(result);
+                });    
+            }
+                        
+        </script>
+    </head>
+    <body>
+        <!-- Author -->
+        <div>
+            <button onclick="listAuthors()">listAuthors</button>
+            <button onclick="getAuthor()">getAuthor</button>
+            <button onclick="storeAuthor()">storeAuthor</button>
+            <button onclick="updateAuthor()">updateAuthor</button>
+            <button onclick="deleteAuthor()">deleteAuthor</button>
+        </div>        
+        
+    </body>
+</html>

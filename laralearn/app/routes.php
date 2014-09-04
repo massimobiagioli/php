@@ -15,11 +15,4 @@ Route::get('/', function() {
     return View::make('hello');
 });
 
-Route::get('/selectAuthors', function() {
-    $result = "";
-    $authors = DB::table('authors')->get();
-    foreach ($authors as $author) {
-        $result .= $author->name;
-    }
-    return $result;
-});
+Route::resource('author', 'AuthorController', array('except' => array('create', 'edit')));
