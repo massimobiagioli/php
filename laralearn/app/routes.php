@@ -21,7 +21,7 @@ Route::get('/example', function() {
 });
 
 Route::get('/exampleWithParameter/{name}', function($name) {
-    return 'example with parameter: ' . $name;
+    return 'No problem, ' . $name;
 });
 
 Route::resource('author', 'AuthorController', array('except' => array('create', 'edit')));
