@@ -15,4 +15,13 @@ Route::get('/', function() {
     return View::make('hello');
 });
 
+
+Route::get('/example', function() {
+    return 'first example';
+});
+
+Route::get('/exampleWithParameter/{name}', function($name) {
+    return 'example with parameter: ' . $name;
+});
+
 Route::resource('author', 'AuthorController', array('except' => array('create', 'edit')));
