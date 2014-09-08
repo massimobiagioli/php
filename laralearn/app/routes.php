@@ -25,3 +25,4 @@ Route::get('/exampleWithParameter/{name}', function($name) {
 });
 
 Route::resource('author', 'AuthorController', array('except' => array('create', 'edit')));
+Route::resource('author2', 'AuthorController2', array('except' => array('create', 'edit')));
