@@ -11,7 +11,7 @@
             function listAuthors() {
                 $.ajax({
                     type: "GET",
-                    url: serverUrl + "author",
+                    url: serverUrl + "author"
                 })
                 .done(function(result) {
                     console.log(result);
@@ -21,7 +21,7 @@
             function getAuthor() {
                 $.ajax({
                     type: "GET",
-                    url: serverUrl + "author/1",
+                    url: serverUrl + "author/1"
                 })
                 .done(function(result) {
                     console.log(result)

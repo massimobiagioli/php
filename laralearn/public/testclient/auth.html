@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST CLIENT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript">
+            var serverUrl = "/";            
+            var basicAuthorizationHeader = "Basic " + btoa('admin' + ":" + 'Bazzw03dd');
+            
+            function listAuthors() {
+                $.ajax({
+                    type: "GET",
+                    url: serverUrl + "author3",
+                    headers: {
+                        "Authorization": basicAuthorizationHeader
+                    }
+                })
+                .done(function(result) {
+                    console.log(result);
+                });        
+            }                        
+            
+            function listAuthorsNoAuth() {
+                $.ajax({
+                    type: "GET",
+                    url: serverUrl + "author3"
+                })
+                .done(function(result) {
+                    console.log(result);
+                });        
+            }      
+            
+        </script>
+    </head>
+    <body>
+        <!-- Author -->
+        <div>
+            <button onclick="listAuthors()">listAuthors</button>     
+            <button onclick="listAuthorsNoAuth()">listAuthorsNoAuth</button> 
+        </div>        
+        
+    </body>
+</html>
