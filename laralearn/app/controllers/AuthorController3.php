@@ -17,6 +17,7 @@ class AuthorController3 extends BaseController {
      * @return Response
      */
     public function index() {
+        Log::info('Full Name: ' . Auth::user()->fullname);
         return $this->author->index();
     }    
 
