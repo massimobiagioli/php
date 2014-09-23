@@ -1,7 +1,5 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
-
 /*
   |--------------------------------------------------------------------------
   | Application & Route Filters
